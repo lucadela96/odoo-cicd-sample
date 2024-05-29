@@ -4,16 +4,21 @@
   gather_facts: false
 
   vars:
-    odoo_version: "latest"
-    postgres_version: "15"
+    odoo_version: '14.0'
+    postgres_version: '15'
 
   tasks:
+    - name: Ensure directory for the Odoo version exists
+      file:
+        path: /home/zivi/Services/odoo-docker-test/{{ odoo_version }}
+        state: directory
+
     - name: Render Docker Compose template
       template:
         src: ../../templates/docker-compose.j2
-        dest: /home/zivi/Services/odoo-docker-test/docker-compose.yml
+        dest: /home/zivi/Services/odoo-docker-test/{{ odoo_version }}/docker-compose.yml
 
     - name: Start Docker Compose
       command: docker compose up -d
       args:
-        chdir: /home/zivi/Services/odoo-docker-test/
+        chdir: /home/zivi/Services/odoo-docker-test/{{ odoo_version }}

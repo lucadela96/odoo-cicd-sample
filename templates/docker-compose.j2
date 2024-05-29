@@ -5,7 +5,7 @@ services:
     depends_on:
       - db
     ports:
-      - "8069:8069"
+      - "80{{ odoo_version }}:8069"
     environment:
       - HOST=db
       - USER=odoo
