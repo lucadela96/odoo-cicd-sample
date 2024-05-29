@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  odoo:
+    image: cs-nuc-04:5001/compassion-odoo:{{ odoo_version }}
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+  db:
+    image: postgres:{{ postgres_version }}
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo

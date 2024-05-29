@@ -1,0 +1,19 @@
+---
+- name: Generate and Start Docker Compose
+  hosts: test
+  gather_facts: false
+
+  vars:
+    odoo_version: "latest"
+    postgres_version: "15"
+
+  tasks:
+    - name: Render Docker Compose template
+      template:
+        src: ../../templates/docker-compose.j2
+        dest: /home/zivi/Services/odoo-docker-test/docker-compose.yml
+
+    - name: Start Docker Compose
+      command: docker compose up -d
+      args:
+        chdir: /home/zivi/Services/odoo-docker-test/
