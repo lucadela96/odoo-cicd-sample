@@ -19,6 +19,16 @@
         src: ../../templates/docker-compose.j2
         dest: /home/zivi/Services/odoo-docker-test/{{ odoo_version }}/docker-compose.yml
 
+    - name: Stop Docker Compose
+      command: docker compose down
+      args:
+        chdir: /home/zivi/Services/odoo-docker-test/{{ odoo_version }}
+
+    - name: Docker Compose pull
+      command: docker compose pull
+      args:
+        chdir: /home/zivi/Services/odoo-docker-test/{{ odoo_version }}
+
     - name: Start Docker Compose
       command: docker compose up -d
       args:
