@@ -9,6 +9,7 @@ RUN apt-get update && \
 RUN git clone https://github.com/OCA/dms.git /mnt/extra-addons/dms -b 14.0
 RUN git clone https://github.com/OCA/server-backend.git /mnt/extra-addons/server-backend -b 14.0
 RUN git clone https://github.com/OCA/payroll.git /mnt/extra-addons/payroll -b 14.0
+RUN git clone https://github.com/OCA/purchase-workflow.git /mnt/extra-addons/purchase-workflow -b 14.0
 
 # Stage 2: Production stage with Odoo base image
 FROM odoo:14.0
