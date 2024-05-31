@@ -16,3 +16,5 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
+    volumes:
+      - ./data:/var/lib/postgresql/data  # Mount volume for PostgreSQL data
