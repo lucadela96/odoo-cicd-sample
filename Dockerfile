@@ -11,6 +11,7 @@ RUN git clone https://github.com/OCA/server-backend.git /mnt/extra-addons/server
 RUN git clone https://github.com/OCA/payroll.git /mnt/extra-addons/payroll -b 16.0
 RUN git clone https://github.com/OCA/purchase-workflow.git /mnt/extra-addons/purchase-workflow -b 16.0
 RUN git clone https://github.com/OCA/reporting-engine.git /mnt/extra-addons/reporting-engine -b 16.0
+RUN git clone https://github.com/OCA/field-service.git /mnt/extra-addons/field-service -b 16.0
 
 # Stage 2: Production stage with Odoo base image
 FROM odoo:16.0
