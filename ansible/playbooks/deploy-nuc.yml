@@ -4,8 +4,8 @@
   gather_facts: false
 
   vars:
-    odoo_port: '14'
-    odoo_version: '14.0'
+    odoo_port: '15'
+    odoo_version: '15.0'
     postgres_version: '15'
 
   tasks:
