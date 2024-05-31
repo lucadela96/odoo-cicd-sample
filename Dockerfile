@@ -13,6 +13,7 @@ RUN git clone https://github.com/OCA/purchase-workflow.git /mnt/extra-addons/pur
 RUN git clone https://github.com/OCA/reporting-engine.git /mnt/extra-addons/reporting-engine -b 17.0
 RUN git clone https://github.com/OCA/field-service.git /mnt/extra-addons/field-service -b 17.0
 RUN git clone https://github.com/OCA/knowledge.git /mnt/extra-addons/knowledge -b 17.0
+RUN git clone https://github.com/OCA/queue.git /mnt/extra-addons/queue -b 17.0
 
 # Stage 2: Production stage with Odoo base image
 FROM odoo:17.0
